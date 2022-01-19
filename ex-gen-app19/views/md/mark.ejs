@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="container">
+    <header>
+        <h1 class="display-4 text-primary"><%= title %></h1>
+    </header>
+    <div role="main">
+        <p class="h5"><%= head %></p>
+        <form action="/md/mark/<%= id %>" method=POST>
+            <div class="form-group">
+                <label for="source">SOURCE</label>
+                <textarea name="source" id="source" rows="5" class="form-control"><%= source %></textarea>
+            </div>
+            <input type="submit" class="btn btn-primary" value="更新">
+        </form>
+        <div class="card mt-4">
+            <div class="card-header text-center h5">
+                Preview
+            </div>
+            <div class="card-body">
+                <%- content %>
+            </div>
+            <div class="card-footer text-muted text-right">
+                <%= footer %>
+            </div>            
+        </div>
+        <p class="mt-4">
+            <a href="/md">&lt;&lt; Top へ戻る</a>
+        </p>
+    </div>
+</body>
+</html>

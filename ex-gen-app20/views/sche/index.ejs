@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title><%= title %></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body class="container">
+	<header>
+		<h1 class="display-4 text-primary"><%= title %></h1>
+	</header>
+
+	<div role="main">
+		<p class="h5 my-4">Hi, <span><%= login.name %></span>!<br>
+		Wlecome to <%= title %>.</p>
+
+		<p class="my-4 h5"><%= message %></p>
+		<table class="table">
+			<% for (var i in content) { %>
+				<% var ob = content[i] %>
+				<tr>
+					<td>
+						<a href="/sche/edit/<%=ob.id%>" class="text-dark"><%= ob.content %> (<%= begindates[i] %> ~ <%= enddates[i] %>)</a>
+					</td>
+					<td>
+						<a href="/sche/delete/<%=ob.id%>">削除</a>
+					</td>
+				</tr>
+			<% } %>
+		</table>
+		<p> </p>
+		<p><a href="/sche/add">※データを登録</a></p>
+	</div>
+</body>
+
+</html>

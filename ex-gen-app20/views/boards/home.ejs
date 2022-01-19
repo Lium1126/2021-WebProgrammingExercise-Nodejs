@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="container">
+    <header>
+        <h1 class="display-4"><%= title %></h1>
+    </header>
+    <div role="main">
+        <p class="h4"><%= userName %>'s messages.</p>
+        <table class="table mt-5">
+            <% for (let i in content) { %>
+                <%- include('data_item', {val: content[i]}) %>
+            <% } %>
+        </table>
+
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a href="/boards/home/<%= userName %>/<%= userId %>/<%= page-1 %>" class="page-link">&lt;&lt; prev</a>
+            </li>
+            <li class="page-item">
+                <a href="/boards/home/<%= userName %>/<%= userId %>/<%= page+1 %>" class="page-link">Next &gt;&gt;</a>
+            </li>
+        </ul>
+        <div class="text-left">
+            <a href="/boards">&lt;&lt; Top.</a>
+        </div>
+    </div>
+</body>
+</html>

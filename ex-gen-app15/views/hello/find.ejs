@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>
+		<%= title %>
+	</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		crossorigin="anonymous" />
+</head>
+
+<body class="container">
+
+	<header>
+		<h1 class="display-4">
+			<%= title %>
+		</h1>
+	</header>
+
+	<div role="main">
+		<p>
+			<%- content %>
+		</p>
+
+		<form method="post" action="/hello/find">
+			<div class="form-group">
+				<label for="find">FIND</label>
+				<input type="text" name="find" id="find" class="form-control" value="<%= find %>">
+			</div>
+
+			<input type="submit" value="更新" class="btn btn-primary">
+		</form>
+
+		<table class="table mt-4">
+			<% for (var i in mydata) { %>
+				<tr>
+					<% var obj=mydata[i]; %>
+						<th>
+							<%= obj.id %>
+						</th>
+						<td>
+							<%= obj.name %>
+						</td>
+						<td>
+							<%= obj.mail %>
+						</td>
+						<td>
+							<%= obj.age %>
+						</td>
+				</tr>
+				<% } %>
+		</table>
+
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>
+		<%= title %>
+	</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		crossorigin="anonymous" />
+	<link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body class="container">
+
+	<header>
+		<h1 class="display-4">
+			<%= title %>
+		</h1>
+	</header>
+
+	<div role="main">
+
+		<ol class="text-danger">
+			<% if (err !=null) { for (let i in err.errors) { %>
+				<li>
+					<%= err.errors[i].message %>
+				</li>
+				<% }} %>
+		</ol>
+
+		<form method="post" action="/users/add">
+
+			<div class="form-group">
+				<label for="name">NAME</label>
+				<input type="text" name="name" id="name" value="<%= form.name %>" class="form-control">
+				<ul class="text-danger">
+					<% if (err !=null) { for (let i in err.get("name")) { %>
+						<li>
+							<%= err.get("name")[i].message %>
+						</li>
+						<% }} %>
+				</ul>
+			</div>
+
+			<div class="form-group">
+				<label for="pass">PASSWORD</label>
+				<input type="password" name="pass" id="pass" value="<%= form.pass %>" class="form-control">
+				<ul class="text-danger">
+					<% if (err !=null) { for (let i in err.get("pass")) { %>
+						<li>
+							<%= err.get("pass")[i].message %>
+						</li>
+						<% }} %>
+				</ul>
+			</div>
+
+			<div class="form-group">
+				<label for="mail">MAIL</label>
+				<input type="text" name="mail" id="mail" value="<%= form.mail %>" class="form-control">
+				<ul class="text-danger">
+					<% if (err !=null) { for (let i in err.get("mail")) { %>
+						<li>
+							<%= err.get("mail")[i].message %>
+						</li>
+						<% }} %>
+				</ul>
+			</div>
+
+			<div class="form-group">
+				<label for="age">AGE</label>
+				<input type="number" name="age" id="age" value="<%= form.age %>" class="form-control">
+				<ul class="text-danger">
+					<% if (err !=null) { for (let i in err.get("age")) { %>
+						<li>
+							<%= err.get("age")[i].message %>
+						</li>
+						<% }} %>
+				</ul>
+			</div>
+
+			<input type="submit" value="作成" class="btn btn-primary">
+		</form>
+
+	</div>
+
+</body>
+
+</html>

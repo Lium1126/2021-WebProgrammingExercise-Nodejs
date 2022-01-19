@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>
+		<%= title %>
+	</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		crossorigin="anonymous" />
+</head>
+
+<body class="container">
+
+	<header>
+		<h1 class="display-4">
+			<%= title %>
+		</h1>
+	</header>
+
+	<div role="main">
+		<table class="table">
+			<% for (var i in content) { %>
+				<tr>
+					<% var obj=content[i]; %>
+						<th>
+							<%= obj.id %>
+						</th>
+						<td>
+							<%= obj.name %>
+						</td>
+						<td>
+							<%= obj.mail %>
+						</td>
+						<td>
+							<%= obj.age %>
+						</td>
+				</tr>
+				<% } %>
+		</table>
+	</div>
+
+</body>
+
+</html>

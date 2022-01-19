@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title><%= title %></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body class="container">
+	<header>
+		<h1 class="display-4 text-primary"><%= title %></h1>
+	</header>
+
+	<div role="main">
+		<p class="h5"><%= head %></p>
+		<form action="/sche/edit/<%=id%>" method="post">
+			<div class="form-group">
+				<label for="sourcebegin">BEGIN</label>
+				<input type="datetime-local" name="sourcebegin" id="sourcebegin" class="form-control" value="<%=sourcebegin%>">
+			</div>
+			<div class="form-group">
+				<label for="sourceend">END</label>
+				<input type="datetime-local" name="sourceend" id="sourceend" class="form-control" value="<%=sourceend%>">
+			</div>
+			<div class="form-group">
+				<label for="sourceplace">PLACE</label>
+				<input type="text" name="sourceplace" id="sourceplace" class="form-control" value="<%=sourceplace%>">
+			</div>
+			<div class="form-group">
+				<label for="source">SOURCE</label>
+				<input type="text" name="source" id="source" class="form-control" value="<%=source%>">
+			</div>
+			<input type="submit" value="更新" class="btn btn-primary">
+		</form>
+
+		<p class="mt-4"><a href="/sche/index">&lt;&lt; Top へ戻る</a></p>
+	</div>
+</body>
+
+</html>

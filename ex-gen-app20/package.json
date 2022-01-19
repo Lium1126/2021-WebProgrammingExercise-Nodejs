@@ -1,0 +1,22 @@
+{
+  "name": "ex-gen-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "http-errors": "~1.6.3",
+    "markdown-it": "^12.3.2",
+    "morgan": "~1.9.1",
+    "sequelize": "^6.12.0-beta.3",
+    "sequelize-cli": "^6.3.0",
+    "sqlite3": "^5.0.2"
+  }
+}
